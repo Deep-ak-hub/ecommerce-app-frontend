@@ -1,12 +1,14 @@
 import { createRoot } from "react-dom/client";
-import { App } from "./App";
+import "./assets/css/globals.css"
+import {App} from "./App";
 import { StrictMode } from "react";
 
+// converting real dom into virtual dom because react runs on virtual dom
 /* const rootDOM = document.getElementById("root")
 const reactDOM = createRoot(rootDOM!)
 
 reactDOM.render(
-  <h1>Hello World</h1>
+  <h1>Hello World</h1>      //component
 ) */
 
 /* createRoot(document.getElementById("root")!).render(
