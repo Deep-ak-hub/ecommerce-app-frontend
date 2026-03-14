@@ -15,6 +15,7 @@
     b. useEffect
 
 # State
+  - State is data that can change inside a component.
   - object that allows to store and manage data that changes over the time
   - two types of state:
     a. local state

@@ -1,6 +1,10 @@
 import { ProductCard } from "../components/ProductCard";
 
-export const Products = () => {
+type ProductsProps = {
+  search: string;
+};
+
+export const Products = ({ search }: ProductsProps) => {
   const products = [
     {
       id: 1,
@@ -22,16 +26,37 @@ export const Products = () => {
     },
   ];
 
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(search.toLowerCase()),
+  );
+  const handleProductClick = (id: number) => {
+    alert(`Product ${id} clicked`);
+  };
+
   return (
     <div className="max-w-7xl mx-auto p-4 grid grid-cols-4 gap-6">
-      {products.map((product) => (
+      {filteredProducts.map((product) => (
         <ProductCard
           key={product.id}
+          id={product.id}
           title={product.title}
           price={product.price}
           image={product.image}
+          onProductClick={handleProductClick} //Here we are passing the function reference, not executing it.
         />
       ))}
     </div>
   );
 };
+
+/* export const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+};
+ */
