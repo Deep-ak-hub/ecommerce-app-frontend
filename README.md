@@ -26,3 +26,16 @@
   ### SideEffect or Effect Hook
     - whenever your state of the component is updated/changed
     - `useEffect` 
+
+
+# Data Flow
+  Component Render
+        |
+        |
+  Api call(useEffect Runs)
+        |
+        |
+  state changed
+        |
+        |
+  Component Re-render

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ProductCard } from "../components/ProductCard";
 
 type ProductsProps = {
@@ -25,6 +26,11 @@ export const Products = ({ search }: ProductsProps) => {
       image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8",
     },
   ];
+
+  useEffect(() => {
+    // setSearch(search)
+    console.log("search changed: ",search); 
+  }, [search])
 
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(search.toLowerCase()),

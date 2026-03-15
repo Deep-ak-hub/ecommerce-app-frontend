@@ -10,7 +10,7 @@ export const Navbar = ({search, setSearch}: NavbarProps) => {
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
-    console.log(event.target.value);
+    console.log(event);
   };
   return (
     <nav className="bg-white shadow-md">

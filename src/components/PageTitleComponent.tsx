@@ -8,12 +8,12 @@ interface IPageTitleProps {
 
 export const PageTitle = ({
   value,
-  className = "text-blue-50",
+  className = "text-gray-50",
   children = "",
 }: Readonly<IPageTitleProps>) => {
   return (
     <>
-      <h3 className={`text-2xl font-semibold ${className}`}>
+      <h3 className={`text-2xl  ${className}`}>
         {children ? children : value ? value : ""}
       </h3>
     </>

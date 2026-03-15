@@ -18,7 +18,7 @@ const RouterConfig = () => {
           <Route
             path="*"
             element={
-              <ErrorPage code={404} message="Page not found" redirect="/" />
+              <ErrorPage code={404} message="Page not found"/>
             }
           />
         </Routes>
