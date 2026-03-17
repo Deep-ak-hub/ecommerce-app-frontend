@@ -9,10 +9,10 @@ export default function LoginPage() {
       <div className="flex w-full grow h-screen">
         <AuthLeftSidePanel />
 
-        <div className="w-full flex items-center justify-center bg-gradient-to-br from-indigo-400 via-blue-500 to-indigo-900">
+        <div className="w-full flex items-center justify-center bg-primary">
           <form
             className="w-[420px] flex flex-col items-center text-white bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-10 shadow-2xl">
-            <div className="w-24 h-24 rounded-full bg-blue-900 flex items-center justify-center mb-6">
+            <div className="w-24 h-24 rounded-full bg-accent flex items-center justify-center mb-6">
               <span className="text-4xl">👤</span>
             </div>
 
@@ -54,7 +54,7 @@ export default function LoginPage() {
               </NavLink>
             </div>
 
-            <button type = "submit" className="w-full py-3 bg-blue-900 hover:bg-blue-800 tracking-[4px] font-semibold cursor-pointer">
+            <button type = "submit" className="w-full py-3 bg-accent hover:bg-primary tracking-[4px] font-semibold cursor-pointer text-accent-foreground transition duration-300">
               LOGIN
             </button>
 

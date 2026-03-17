@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
+    "@headlessui/react": "^2.2.9",
+    "@heroicons/react": "^2.2.0",
     "@tailwindcss/vite": "^4.1.14",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "css": "^3.0.0",
+    "headlessui": "^0.0.0",
     "lucide-react": "^0.577.0",
     "radix-ui": "^1.4.3",
     "react": "^19.1.1",
