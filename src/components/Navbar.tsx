@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
   type NavbarProps = {
     search: string
-    setSearch: React.Dispatch<React.SetStateAction<string>>
+    setSearch: (value: string) => void 
   }
 
 export const Navbar = ({search, setSearch}: NavbarProps) => {

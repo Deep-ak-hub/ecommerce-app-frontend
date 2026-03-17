@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 import AuthLeftSidePanel from "../components/AuthLeftSidePanel";
 import { PageTitle } from "../components/PageTitleComponent";
-import {Link} from "react-router-dom"
+import {Link, NavLink} from "react-router-dom"
 
 export default function LoginPage() {
   return (
@@ -49,12 +49,12 @@ export default function LoginPage() {
                 Remember me
               </label>
 
-              <a href="/forget-password" className="italic">
+              <NavLink to="/forget-password" className="italic">
                 Forgot Password?
-              </a>
+              </NavLink>
             </div>
 
-            <button type = "submit" className="w-full py-3 bg-indigo-900 hover:bg-indigo-800 tracking-[4px] font-semibold cursor-pointer">
+            <button type = "submit" className="w-full py-3 bg-blue-900 hover:bg-blue-800 tracking-[4px] font-semibold cursor-pointer">
               LOGIN
             </button>
 

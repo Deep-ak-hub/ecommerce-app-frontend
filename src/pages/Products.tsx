@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { ProductCard } from "../components/ProductCard";
 
 type ProductsProps = {
-  search: string;
+  search?: string;
 };
 
 export const Products = ({ search }: ProductsProps) => {
@@ -29,12 +29,16 @@ export const Products = ({ search }: ProductsProps) => {
 
   useEffect(() => {
     // setSearch(search)
-    console.log("search changed: ",search); 
-  }, [search])
+    console.log("search changed: ", search);
+  }, [search]);
 
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(search.toLowerCase()),
-  );
+  const filteredProducts = products.filter((product) => {
+    if (search) {
+      return product.title.toLowerCase().includes(search.toLowerCase());
+    } else {
+      return products
+    }
+  });
   const handleProductClick = (id: number) => {
     alert(`Product ${id} clicked`);
   };

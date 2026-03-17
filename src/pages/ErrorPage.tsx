@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 interface IErrorPageProps {
   code?: number;
   message?: string;
+  buttonTitle?: React.ReactNode
 }
 
 export default function ErrorPage({
   code = 404,
   message = "page not found",
+  buttonTitle = <>Previous Page</>
 }: IErrorPageProps) {
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ export default function ErrorPage({
           onClick={handleRedirect}
           className="mt-2 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition cursor-pointer"
         >
-          Go Back
+          {buttonTitle}
         </button>
       </div>
     </div>
