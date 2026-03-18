@@ -1,12 +1,9 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import { ProductCard } from "../components/ProductCard";
-import Navbar from "@/components/Navbar";
+import Navbar from "../components/Navbar";
+import BannerComponent from "../components/Banner";
 
-type ProductsProps = {
-  search?: string;
-};
-
-export const Products = ({ search }: ProductsProps) => {
+export const Products = () => {
   const products = [
     {
       id: 1,
@@ -122,14 +119,16 @@ export const Products = ({ search }: ProductsProps) => {
     },
   ];
 
-  useEffect(() => {
-    // setSearch(search)
-    console.log("search changed: ", search);
-  }, [search]);
+  const [searchParams, setSearchParams] = useState("")
+
+  // useEffect(() => {
+  //   // setSearch(search)
+  //   console.log("search changed: ", searchParams);
+  // }, [searchParams]);
 
   const filteredProducts = products.filter((product) => {
-    if (search) {
-      return product.title.toLowerCase().includes(search.toLowerCase());
+    if (searchParams) {
+      return product.title.toLowerCase().includes(searchParams.toLowerCase());
     } else {
       return products;
     }
@@ -140,7 +139,8 @@ export const Products = ({ search }: ProductsProps) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar search={searchParams} setSearch={setSearchParams}/>
+      <BannerComponent />
       <div className="max-w-7xl mx-auto px-2 sm:px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
         {filteredProducts.map((product) => (
           <ProductCard

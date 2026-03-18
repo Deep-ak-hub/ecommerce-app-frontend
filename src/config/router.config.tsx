@@ -28,7 +28,7 @@ import RegisterPage from "../pages/RegisterPage";
 //   );
 // };
 
-                                            // Provider Based Router
+// Provider Based Router
 const routePaths = createBrowserRouter([
   {path: "/", element : <Products />},
   {path: "/login", element : <LoginPage />},
