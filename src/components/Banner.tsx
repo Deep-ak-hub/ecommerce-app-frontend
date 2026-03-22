@@ -26,7 +26,7 @@ export default function BannerComponent() {
             color="gray"
             className="border-0 bg-transparent hover:bg-transparent"
           >
-            <HiX className="h-4 w-4 cursor-pointer"/>
+            <HiX className="h-4 w-4 cursor-pointer" />
           </BannerCollapseButton>
         </div>
       </div>

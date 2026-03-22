@@ -41,7 +41,7 @@ export const ProductCard = ({
     <>
       <div
         onClick={() => onProductClick(id)}
-        className="border rounded-lg p-4 shadow hover:shadow-lg transition cursor-pointer transform hover:scale-105"
+        className="border flex flex-col justify-between rounded-lg p-4 shadow hover:shadow-lg transition cursor-pointer transform hover:scale-105"
       >
         <div className="relative">
           <img
@@ -72,21 +72,13 @@ export const ProductCard = ({
         <div className="flex gap-2 w-full">
           <button
             onClick={handleBuyNow}
-            style={{
-              backgroundColor: `var(--primary)`,
-              color: `var(--primary-foreground)`,
-            }}
-            className="flex-1 py-2 px-2 sm:py-2 sm:px-3 rounded-md font-semibold text-xs sm:text-sm transition duration-300 cursor-pointer hover:brightness-110 hover:shadow-md"
+            className="flex-1 py-2 px-2 sm:py-2 sm:px-3 bg-primary text-primary-foreground rounded-md font-semibold text-xs sm:text-sm transition duration-300 cursor-pointer hover:brightness-110 hover:shadow-md"
           >
             Buy Now
           </button>
           <button
             onClick={handleAddToCart}
-            style={{
-              backgroundColor: `var(--vibrant-start)`,
-              color: `var(--vibrant-foreground)`,
-            }}
-            className="flex-1 py-2 px-2 sm:py-2 sm:px-3 rounded-md font-semibold text-xs sm:text-sm transition duration-300 cursor-pointer hover:brightness-110 hover:shadow-md"
+            className="flex-1 py-2 px-2 sm:py-2 sm:px-3 rounded-md bg-vibrant-start text-vibrant-foreground font-semibold text-xs sm:text-sm transition duration-300 cursor-pointer hover:brightness-110 hover:shadow-md"
           >
             Add to Cart
           </button>

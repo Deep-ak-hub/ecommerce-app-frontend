@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ProductCard } from "../components/ProductCard";
 import Navbar from "../components/Navbar";
 import BannerComponent from "../components/Banner";
+import { FooterLayoutPage } from "./layouts/FooterLayoutPage";
 
 export const Products = () => {
   const products = [
@@ -154,6 +155,7 @@ export const Products = () => {
           />
         ))}
       </div>
+      <FooterLayoutPage />
     </>
   );
 };

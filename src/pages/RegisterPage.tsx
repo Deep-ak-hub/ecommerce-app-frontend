@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthLeftSidePanel from "../components/AuthLeftSidePanel";
 import { PageTitle } from "../components/PageTitleComponent";
 
 interface RegistrationFormData {
@@ -58,7 +57,7 @@ export default function RegisterPage() {
         localStorage.setItem("password", formData.password);
         
         // Redirect to login page or directly login
-        navigate("/login", { state: { email: formData.email, password: formData.password } });
+        navigate("/auth/login", { state: { email: formData.email, password: formData.password } });
       } else {
         console.error("Registration failed");
       }
@@ -72,16 +71,15 @@ export default function RegisterPage() {
   return (
     <>
       <div className="flex w-full grow h-screen">
-        <AuthLeftSidePanel />
 
-        <div className="w-full flex items-center justify-center bg-gradient-to-br from-indigo-400 via-blue-500 to-indigo-900 p-4 overflow-y-auto">
+        <div className="w-full flex items-center justify-center bg-primary  p-4 overflow-y-auto">
           <form
             onSubmit={handleSubmit}
-            className="w-full max-w-[420px] flex flex-col items-center text-white bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-10 shadow-2xl my-8"
+            className="w-full max-w-105 flex flex-col items-center text-white bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-10 shadow-2xl my-8"
           >
             {/* Avatar */}
-            <div className="w-24 h-24 rounded-full bg-blue-900 flex items-center justify-center mb-6 ring-2 ring-white/20">
-              <span className="text-4xl">👥</span>
+            <div className="w-24 h-24 rounded-full bg-green-700 flex items-center justify-center mb-6 ring-2 ring-white/20">
+              <span className="text-4xl">👤</span>
             </div>
 
             {/* Title */}
@@ -153,32 +151,6 @@ export default function RegisterPage() {
               </div>
             </div>
 
-            {/* Gender Field */}
-            <div className="w-full mb-6">
-              <div className="flex items-center border-b border-white/70 pb-2">
-                <span className="mr-3">⚧</span>
-                <select
-                  name="gender"
-                  value={formData.gender}
-                  onChange={handleChange}
-                  className="bg-transparent outline-none w-full placeholder-white/80 text-white cursor-pointer"
-                >
-                  <option value="" disabled className="text-gray-800">
-                    Select Gender
-                  </option>
-                  <option value="male" className="text-gray-800">
-                    Male
-                  </option>
-                  <option value="female" className="text-gray-800">
-                    Female
-                  </option>
-                  <option value="other" className="text-gray-800">
-                    Other
-                  </option>
-                </select>
-              </div>
-            </div>
-
             {/* Address Field */}
             <div className="w-full mb-8">
               <div className="flex items-start border-b border-white/70 pb-2">
@@ -200,7 +172,7 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 bg-blue-900 hover:bg-blue-800 disabled:bg-gray-600 disabled:cursor-not-allowed tracking-[4px] font-semibold cursor-pointer rounded-lg transition-colors duration-300"
+              className="w-full py-3 bg-green-700 hover:bg-green-800 disabled:bg-gray-600 disabled:cursor-not-allowed tracking-[4px] font-semibold cursor-pointer rounded-lg transition-colors duration-300"
             >
               {isLoading ? "REGISTERING..." : "REGISTER"}
             </button>
@@ -210,8 +182,8 @@ export default function RegisterPage() {
               <p className="mb-3 text-white/90">Already have an account?</p>
 
               <Link
-                to="/login"
-                className="px-6 py-2 border border-white/70 rounded-md hover:bg-white/10 transition cursor-pointer"
+                to="../login"
+                className="px-6 py-2 border border-white/70 rounded-md hover:bg-white/20 transition cursor-pointer"
               >
                 Login
               </Link>
