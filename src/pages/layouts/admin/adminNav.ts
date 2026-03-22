@@ -11,14 +11,10 @@ import {
 } from "@heroicons/react/24/outline";
 import type { ComponentType } from "react";
 
-/** One item in the left admin menu. */
 export type AdminNavItem = {
-  /** URL path, e.g. "/admin/product" */
   to: string;
-  /** Label shown in the sidebar and in the top header title */
   label: string;
   icon: ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
-  /** Use for "/admin" only so "/admin/xyz" does not stay "active" */
   end?: boolean;
 };
 
@@ -34,7 +30,6 @@ export const adminNavItems: AdminNavItem[] = [
   { to: "/admin/chat", label: "Chat", icon: ChatBubbleLeftRightIcon },
 ];
 
-/** Picks the page title to show in the header based on the current URL. */
 export function getAdminPageTitle(pathname: string): string {
   const exact = adminNavItems.find((item) => pathname === item.to);
   if (exact) return exact.label;

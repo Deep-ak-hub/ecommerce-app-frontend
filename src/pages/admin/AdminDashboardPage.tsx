@@ -13,9 +13,8 @@ import {
   peakHourHeights,
   recentOrders,
   topProducts,
-} from "@/pages/layouts/admin layout/adminDashboardSampleData";
+} from "@/pages/admin/adminDashboardSampleData";
 
-/** Tailwind classes for each order status pill. */
 function orderStatusClass(status: string) {
   switch (status) {
     case "Completed":
@@ -31,7 +30,6 @@ function orderStatusClass(status: string) {
   }
 }
 
-/** Main admin home: KPI cards, orders table, and side widgets. */
 export default function AdminDashboardPage() {
   return (
     <div className="space-y-6 sm:space-y-8">
@@ -44,7 +42,6 @@ export default function AdminDashboardPage() {
         </p>
       </header>
 
-      {/* Row of stat cards */}
       <section aria-label="Key performance indicators">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
           {kpiCards.map(
@@ -82,7 +79,6 @@ export default function AdminDashboardPage() {
       </section>
 
       <div className="grid grid-cols-1 gap-4 sm:gap-6 xl:grid-cols-3">
-        {/* Wide column: orders table */}
         <section
           className="min-w-0 overflow-hidden rounded-xl border border-border bg-card shadow-sm xl:col-span-2"
           aria-labelledby="orders-heading"
@@ -101,7 +97,7 @@ export default function AdminDashboardPage() {
             </div>
             <button
               type="button"
-              className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-lg border border-border bg-background px-3 py-2 text-xs font-medium text-foreground shadow-sm transition hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:w-auto sm:text-sm"
+              className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-lg border border-border bg-background cursor-pointer px-3 py-2 text-xs font-medium text-foreground shadow-sm transition hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:w-auto sm:text-sm"
             >
               <ArrowPathIcon className="size-4" aria-hidden />
               Refresh
@@ -185,7 +181,6 @@ export default function AdminDashboardPage() {
           </div>
         </section>
 
-        {/* Narrow column: extra widgets */}
         <div className="space-y-6">
           <section
             className="rounded-xl border border-border bg-card p-4 shadow-sm sm:p-5"
